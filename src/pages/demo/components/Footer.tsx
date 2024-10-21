@@ -1,17 +1,17 @@
-import { Checkbox, Space,Button } from 'antd';
-import React, { Component } from 'react'
+import {Checkbox, Space, Button} from 'antd';
+import React, {Component} from 'react'
 
 
-class Footer extends Component{
+class Footer extends Component {
 
-    render(){
+    render() {
 
         return (
 
             <>
-            <Checkbox name="all" /> 已完成0/全部3件
-            
-            <Button type="primary"  >清除已完成任务</Button>
+                <Checkbox name="all"/> 已完成0/全部3件
+
+                <Button type="primary">清除已完成任务</Button>
             </>
         );
     }

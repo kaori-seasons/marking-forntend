@@ -1,48 +1,48 @@
-import type { Effect, Reducer } from 'umi';
+import type {Effect, Reducer} from 'umi';
 
-import type { TagType } from './data.d';
-import { queryTags } from './service';
+import type {TagType} from './data.d';
+import {queryTags} from './service';
 
 export interface StateType {
-  tags: TagType[];
+    tags: TagType[];
 }
 
 export interface ModelType {
-  namespace: string;
-  state: StateType;
-  effects: {
-    fetchTags: Effect;
-  };
-  reducers: {
-    saveTags: Reducer<StateType>;
-  };
+    namespace: string;
+    state: StateType;
+    effects: {
+        fetchTags: Effect;
+    };
+    reducers: {
+        saveTags: Reducer<StateType>;
+    };
 }
 
 const Model: ModelType = {
-  namespace: 'dashboardAndmonitor',
+    namespace: 'dashboardAndmonitor',
 
-  state: {
-    tags: [],
-  },
-
-  effects: {
-    *fetchTags(_, { call, put }) {
-      const response = yield call(queryTags);
-      yield put({
-        type: 'saveTags',
-        payload: response.list,
-      });
+    state: {
+        tags: [],
     },
-  },
 
-  reducers: {
-    saveTags(state, action) {
-      return {
-        ...state,
-        tags: action.payload,
-      };
+    effects: {
+        * fetchTags(_, {call, put}) {
+            const response = yield call(queryTags);
+            yield put({
+                type: 'saveTags',
+                payload: response.list,
+            });
+        },
     },
-  },
+
+    reducers: {
+        saveTags(state, action) {
+            return {
+                ...state,
+                tags: action.payload,
+            };
+        },
+    },
 };
 
 export default Model;

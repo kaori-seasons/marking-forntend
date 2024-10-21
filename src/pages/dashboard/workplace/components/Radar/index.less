@@ -3,15 +3,18 @@
 .radar {
   .legend {
     margin-top: 16px;
+
     .legendItem {
       position: relative;
       color: @text-color-secondary;
       line-height: 22px;
       text-align: center;
       cursor: pointer;
+
       p {
         margin: 0;
       }
+
       h6 {
         margin-top: 4px;
         margin-bottom: 0;
@@ -20,6 +23,7 @@
         font-size: 24px;
         line-height: 32px;
       }
+
       &::after {
         position: absolute;
         top: 8px;
@@ -30,9 +34,11 @@
         content: '';
       }
     }
+
     > :last-child .legendItem::after {
       display: none;
     }
+
     .dot {
       position: relative;
       top: -1px;

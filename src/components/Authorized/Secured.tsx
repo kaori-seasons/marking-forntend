@@ -5,10 +5,10 @@ import CheckPermissions from './CheckPermissions';
 const Exception403 = () => 403;
 
 export const isComponentClass = (component: React.ComponentClass | React.ReactNode): boolean => {
-  if (!component) return false;
-  const proto = Object.getPrototypeOf(component);
-  if (proto === React.Component || proto === Function.prototype) return true;
-  return isComponentClass(proto);
+    if (!component) return false;
+    const proto = Object.getPrototypeOf(component);
+    if (proto === React.Component || proto === Function.prototype) return true;
+    return isComponentClass(proto);
 };
 
 // Determine whether the incoming component has been instantiated
@@ -16,14 +16,14 @@ export const isComponentClass = (component: React.ComponentClass | React.ReactNo
 // Authorized  render is already instantiated, children is no instantiated
 // Secured is not instantiated
 const checkIsInstantiation = (target: React.ComponentClass | React.ReactNode) => {
-  if (isComponentClass(target)) {
-    const Target = target as React.ComponentClass;
-    return (props: any) => <Target {...props} />;
-  }
-  if (React.isValidElement(target)) {
-    return (props: any) => React.cloneElement(target, props);
-  }
-  return () => target;
+    if (isComponentClass(target)) {
+        const Target = target as React.ComponentClass;
+        return (props: any) => <Target {...props} />;
+    }
+    if (React.isValidElement(target)) {
+        return (props: any) => React.cloneElement(target, props);
+    }
+    return () => target;
 };
 
 /**
@@ -37,21 +37,21 @@ const checkIsInstantiation = (target: React.ComponentClass | React.ReactNode) =>
  * @param {ReactNode} error 非必需参数
  */
 const authorize = (authority: string, error?: React.ReactNode) => {
-  /**
-   * Conversion into a class 防止传入字符串时找不到staticContext造成报错 String parameters can cause staticContext
-   * not found error
-   */
-  let classError: boolean | React.FunctionComponent = false;
-  if (error) {
-    classError = (() => error) as React.FunctionComponent;
-  }
-  if (!authority) {
-    throw new Error('authority is required');
-  }
-  return function decideAuthority(target: React.ComponentClass | React.ReactNode) {
-    const component = CheckPermissions(authority, target, classError || Exception403);
-    return checkIsInstantiation(component);
-  };
+    /**
+     * Conversion into a class 防止传入字符串时找不到staticContext造成报错 String parameters can cause staticContext
+     * not found error
+     */
+    let classError: boolean | React.FunctionComponent = false;
+    if (error) {
+        classError = (() => error) as React.FunctionComponent;
+    }
+    if (!authority) {
+        throw new Error('authority is required');
+    }
+    return function decideAuthority(target: React.ComponentClass | React.ReactNode) {
+        const component = CheckPermissions(authority, target, classError || Exception403);
+        return checkIsInstantiation(component);
+    };
 };
 
 export default authorize;

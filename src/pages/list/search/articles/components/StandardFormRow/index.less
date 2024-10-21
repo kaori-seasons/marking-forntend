@@ -6,11 +6,13 @@
   margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px dashed @border-color-split;
+
   :global {
     .ant-form-item,
     .ant-legacy-form-item {
       margin-right: 24px;
     }
+
     .ant-form-item-label,
     .ant-legacy-form-item-label {
       label {
@@ -18,6 +20,7 @@
         color: @text-color;
       }
     }
+
     .ant-form-item-label,
     .ant-legacy-form-item-label,
     .ant-form-item-control,
@@ -26,23 +29,28 @@
       line-height: 32px;
     }
   }
+
   .label {
     flex: 0 0 auto;
     margin-right: 24px;
     color: @heading-color;
     font-size: @font-size-base;
     text-align: right;
+
     & > span {
       display: inline-block;
       height: 32px;
       line-height: 32px;
+
       &::after {
         content: '：';
       }
     }
   }
+
   .content {
     flex: 1 1 0;
+
     :global {
       .ant-form-item,
       .ant-legacy-form-item {
@@ -80,6 +88,7 @@
     div.ant-legacy-form-item-control-wrapper {
       display: block;
     }
+
     .ant-form-item-label,
     .ant-legacy-form-item-label {
       float: left;

@@ -1,48 +1,48 @@
-import type { Effect, Reducer } from 'umi';
+import type {Effect, Reducer} from 'umi';
 
-import type { BasicGood } from './data.d';
-import { queryBasicProfile } from './service';
+import type {BasicGood} from './data.d';
+import {queryBasicProfile} from './service';
 
 export interface StateType {
-  basicGoods: BasicGood[];
+    basicGoods: BasicGood[];
 }
 
 export interface ModelType {
-  namespace: string;
-  state: StateType;
-  effects: {
-    fetchBasic: Effect;
-  };
-  reducers: {
-    show: Reducer<StateType>;
-  };
+    namespace: string;
+    state: StateType;
+    effects: {
+        fetchBasic: Effect;
+    };
+    reducers: {
+        show: Reducer<StateType>;
+    };
 }
 
 const Model: ModelType = {
-  namespace: 'profileAndbasic',
+    namespace: 'profileAndbasic',
 
-  state: {
-    basicGoods: [],
-  },
-
-  effects: {
-    *fetchBasic(_, { call, put }) {
-      const response = yield call(queryBasicProfile);
-      yield put({
-        type: 'show',
-        payload: response,
-      });
+    state: {
+        basicGoods: [],
     },
-  },
 
-  reducers: {
-    show(state, { payload }) {
-      return {
-        ...state,
-        ...payload,
-      };
+    effects: {
+        * fetchBasic(_, {call, put}) {
+            const response = yield call(queryBasicProfile);
+            yield put({
+                type: 'show',
+                payload: response,
+            });
+        },
     },
-  },
+
+    reducers: {
+        show(state, {payload}) {
+            return {
+                ...state,
+                ...payload,
+            };
+        },
+    },
 };
 
 export default Model;
