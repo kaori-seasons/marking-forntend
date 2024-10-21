@@ -1,0 +1,16 @@
+
+{
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
+    "transform-remove-strict-mode"
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "loose": true,
+        "modules": false
+      }
+    ]
+  ]
+}

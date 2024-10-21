@@ -1,0 +1,65 @@
+{
+  "name": "@ant-design/pro-table",
+  "version": "2.80.8",
+  "description": "🏆 Use Ant Design Table like a Pro!",
+  "keywords": [
+    "antd",
+    "admin",
+    "ant-design",
+    "ant-design-pro"
+  ],
+  "homepage": "https://github.com/ant-design/pro-components/tree/master/packages/table#readme",
+  "bugs": "http://github.com/umijs/plugins/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ant-design/pro-components"
+  },
+  "license": "MIT",
+  "sideEffects": [
+    "*.less"
+  ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 11"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.1.0",
+    "@ant-design/pro-card": "1.20.22",
+    "@ant-design/pro-field": "1.36.7",
+    "@ant-design/pro-form": "1.74.7",
+    "@ant-design/pro-provider": "1.10.0",
+    "@ant-design/pro-utils": "1.45.3",
+    "@babel/runtime": "^7.18.0",
+    "antd": "^4.20.0 ",
+    "classnames": "^2.2.6",
+    "moment": "^2.24.0",
+    "omit.js": "^2.0.2",
+    "rc-util": "^5.0.1",
+    "react-sortable-hoc": "^2.0.0",
+    "unstated-next": "^1.1.0",
+    "use-json-comparison": "^1.0.5",
+    "use-media-antd-query": "^1.1.0"
+  },
+  "peerDependencies": {
+    "rc-field-form": "^1.22.0",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "authors": [
+    "chencheng <sorrycc@gmail.com> (https://github.com/sorrycc)",
+    "chenshuai2144 <qixian.cs@outlook.om> (https://github.com/chenshuai2144)"
+  ]
+}

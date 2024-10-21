@@ -1,0 +1,40 @@
+{
+    "name": "@types/react-router-redux",
+    "version": "5.0.27",
+    "description": "TypeScript definitions for react-router-redux",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-router-redux",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Huy Nguyen",
+            "githubUsername": "huy-nguyen",
+            "url": "https://github.com/huy-nguyen"
+        },
+        {
+            "name": "Shoya Tanaka",
+            "githubUsername": "8398a7",
+            "url": "https://github.com/8398a7"
+        },
+        {
+            "name": "Mykolas",
+            "githubUsername": "mykolas",
+            "url": "https://github.com/mykolas"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-router-redux"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/history": "^4.7.11",
+        "@types/react": "*",
+        "@types/react-router": "^5.1.0",
+        "redux": ">= 3.7.2"
+    },
+    "typesPublisherContentHash": "c78e352da9f1506f0f4a60278f926128d8a6dcd1eaf5d31ad717973fb4932111",
+    "typeScriptVersion": "4.6"
+}
